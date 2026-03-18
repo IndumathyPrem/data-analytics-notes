@@ -7,7 +7,7 @@ To build strong fundamentals and revise concepts easily.
 - Excel Formulas & Cleaning
 - Power BI & DAX
 - Data Modeling
-- - SQL Queries & Joins
+- SQL Queries & Joins
 
 ## 💡 Why this repo?
 These notes are written in simple language with real examples for quick revision and interview preparation.
