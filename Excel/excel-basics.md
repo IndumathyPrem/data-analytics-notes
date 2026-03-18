@@ -1,7 +1,5 @@
 Excel for Data Analysis ( Notes)
 
----
-
 Overview
 
 | Topic        | Description |
@@ -9,8 +7,6 @@ Overview
 | Tool        | Microsoft Excel |
 | Purpose     | Data cleaning, analysis, visualization |
 | Use Cases   | Reporting, dashboards, preprocessing |
-
----
 
 2. Core Formulas
 
@@ -22,7 +18,6 @@ Overview
 | COUNTA | =COUNTA(A1:A10) | Counts non-empty cells |
 | IF | =IF(A1>50,"Pass","Fail") | Conditional logic |
 
----
 
 3. Text Functions
 
@@ -34,7 +29,6 @@ Overview
 | LEFT | =LEFT(A1,4) | Extracts from left |
 | RIGHT | =RIGHT(A1,4) | Extracts from right |
 | MID | =MID(A1,1,4) | Extracts from middle |
-
 
  4. Lookup Functions
 
@@ -62,9 +56,7 @@ Overview
 | Sorting | Arrange data (A–Z / Z–A) |
 | Filtering | Display specific rows |
 
----
-
-## 🔹 7. Pivot Tables
+ 7. Pivot Tables
 
 | Step | Action |
 |------|-------|
@@ -72,7 +64,7 @@ Overview
 | 2 | Insert → Pivot Table |
 | 3 | Drag fields (Rows, Columns, Values) |
 
-👉 Used for summarizing large datasets quickly
+Used for summarizing large datasets quickly
 
  8. Conditional Formatting
 
@@ -82,9 +74,7 @@ Overview
 | Detect duplicates | Duplicate values rule |
 | Visual patterns | Color scales |
 
----
-
-## 🔹 9. Data Validation
+ 9. Data Validation
 
 | Feature | Purpose |
 |--------|--------|
@@ -100,16 +90,12 @@ Overview
 | Line Chart | Trends over time |
 | Pie Chart | Proportions |
 
----
-
 11. Common Mistakes
 
 - Hidden spaces in text  
 - Incorrect formula ranges  
 - Wrong data types  
 - Overwriting formulas  
-
----
 
 12. Best Practices
 
@@ -118,8 +104,6 @@ Overview
 - Avoid merged cells  
 - Maintain consistent formatting  
 - Validate data before analysis  
-
----
 
 Interview Questions
 
