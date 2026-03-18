@@ -40,10 +40,10 @@ Overview
 
 | Function | Syntax | Notes |
 |----------|--------|------|
-| HLOOKUP | =HLOOKUP(lookup_value, table_array, row_index, FALSE) |Horizontal Lookup | Rarely used
-| VLOOKUP | =VLOOKUP(A2,A1:C10,2,FALSE) | Vertical lookup | rarely used
-| XLOOKUP | =XLOOKUP(A2,A1:A10,B1:B10) | More flexible, modern | Prefered
-| INDEX + MATCH | =INDEX(return_range, MATCH(value, lookup_range, 0))| Complex / large data |Prefered
+| HLOOKUP | =HLOOKUP(lookup_value, table_array, row_index, FALSE) |Horizontal Lookup, Rarely used|
+| VLOOKUP | =VLOOKUP(A2,A1:C10,2,FALSE) | Vertical lookup , Rarely used|
+| XLOOKUP | =XLOOKUP(A2,A1:A10,B1:B10) | More flexible, modern , Prefered|
+| INDEX + MATCH | =INDEX(return_range, MATCH(value, lookup_range, 0))| Complex / large data , Prefered|
 
  5. Data Cleaning Tasks
 
