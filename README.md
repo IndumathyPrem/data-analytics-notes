@@ -19,8 +19,7 @@ This repository documents my journey of learning Data Analytics.
 - PowerQuery/
 - PowerBI/
 - DAX/
-- SQL/ (Coming Soon)
-
+- SQL/
 
 # Goal
 
