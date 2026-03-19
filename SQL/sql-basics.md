@@ -80,6 +80,8 @@ HAVING COUNT(*) > 5;
 |--------|------|--------|
 | Filters | Before grouping | After grouping |
 | Works on | Rows | Groups |
+|Used with |	Normal columns |	Aggregate functions
+
 
  10. Common Mistakes
 
