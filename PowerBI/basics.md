@@ -53,17 +53,6 @@
 | Slicers | Interactive filtering |
 
 
- 7. Common Mistakes
-
-- Poor data model  
-- Too many visuals  
-- Wrong relationships  
-
-Interview Questions
-
-- What is Power BI?  
-- What is Star Schema?  
-- Difference between fact and dimension table?  
 
 
  Key Takeaways
