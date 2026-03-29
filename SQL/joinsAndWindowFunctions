@@ -1,0 +1,260 @@
+ **JOINS + WINDOW FUNCTIONS** 
+
+# 🗄️ SQL Basics (Extended Notes)
+
+# 12. JOINS (All Types)
+
+## 🔹 Definition
+
+| Topic | Description                                                  |
+| ----- | ------------------------------------------------------------ |
+| JOIN  | Combines data from multiple tables based on a related column |
+
+---
+
+## 🔹 Types of Joins
+
+| Join Type  | Description                                     |
+| ---------- | ----------------------------------------------- |
+| INNER JOIN | Only matching rows from both tables             |
+| LEFT JOIN  | All rows from left + matching from right        |
+| RIGHT JOIN | All rows from right + matching from left        |
+| FULL JOIN  | All rows from both tables (matched + unmatched) |
+| CROSS JOIN | All possible combinations (Cartesian product)   |
+| SELF JOIN  | Table joined with itself                        |
+
+---
+
+## 🔹 1. INNER JOIN
+
+```sql
+SELECT e.name, d.dept_name
+FROM employees e
+INNER JOIN departments d
+ON e.dept_id = d.id;
+```
+
+👉 Returns only matching records
+
+---
+
+## 🔹 2. LEFT JOIN
+
+```sql
+SELECT e.name, d.dept_name
+FROM employees e
+LEFT JOIN departments d
+ON e.dept_id = d.id;
+```
+
+👉 All employees (even without department)
+
+---
+
+## 🔹 3. RIGHT JOIN
+
+```sql
+SELECT e.name, d.dept_name
+FROM employees e
+RIGHT JOIN departments d
+ON e.dept_id = d.id;
+```
+
+👉 All departments (even without employees)
+
+---
+
+## 🔹 4. FULL JOIN
+
+```sql
+SELECT e.name, d.dept_name
+FROM employees e
+FULL JOIN departments d
+ON e.dept_id = d.id;
+```
+
+👉 All records from both tables
+
+---
+
+## 🔹 5. CROSS JOIN
+
+```sql
+SELECT e.name, d.dept_name
+FROM employees e
+CROSS JOIN departments d;
+```
+
+👉 Every employee × every department
+
+---
+
+## 🔹 6. SELF JOIN
+
+```sql
+SELECT a.name AS employee, b.name AS manager
+FROM employees a
+JOIN employees b
+ON a.manager_id = b.id;
+```
+
+👉 Table joined with itself
+
+---
+
+## 🔹 Visual Understanding 
+
+| Join  | Result               |
+| ----- | -------------------- |
+| INNER | Intersection only    |
+| LEFT  | Left + intersection  |
+| RIGHT | Right + intersection |
+| FULL  | Everything           |
+| CROSS | All combinations     |
+
+---
+
+## 🔹 When to Use
+
+| Situation             | Join       |
+| --------------------- | ---------- |
+| Need matching data    | INNER JOIN |
+| Keep all left data    | LEFT JOIN  |
+| Keep all right data   | RIGHT JOIN |
+| Need everything       | FULL JOIN  |
+| Generate combinations | CROSS JOIN |
+| Compare same table    | SELF JOIN  |
+
+---
+
+## 🔹 Common Mistakes
+
+* Missing `ON` condition → ❌ wrong results
+* Using INNER instead of LEFT → ❌ losing data
+* Not understanding NULLs in joins
+* CROSS JOIN by mistake → ❌ huge data
+
+---
+
+## One-line Memory Trick
+
+* **INNER → match only**
+* **LEFT → keep left**
+* **RIGHT → keep right**
+* **FULL → keep all**
+* **CROSS → multiply**
+* **SELF → same table**
+
+# 13. WINDOW FUNCTIONS
+
+---
+
+##  Definition
+
+| Topic           | Description                                              |
+| --------------- | -------------------------------------------------------- |
+| Window Function | Performs calculation across rows without collapsing them |
+| Key Feature     | Keeps all rows + adds extra calculation                  |
+
+---
+
+## 🔹 Syntax
+
+```sql
+FUNCTION() OVER (
+    PARTITION BY column
+    ORDER BY column
+)
+```
+
+---
+
+## 🔹 Common Functions
+
+| Type      | Functions                          |
+| --------- | ---------------------------------- |
+| Ranking   | ROW_NUMBER(), RANK(), DENSE_RANK() |
+| Aggregate | SUM(), AVG(), COUNT()              |
+| Value     | LAG(), LEAD()                      |
+
+---
+
+## 🔹 Examples
+
+**1. Ranking**
+
+```sql
+SELECT name, salary,
+       RANK() OVER (ORDER BY salary DESC) AS rank
+FROM employees;
+```
+
+---
+
+**2. Department Average**
+
+```sql
+SELECT name, dept, salary,
+       AVG(salary) OVER (PARTITION BY dept) AS dept_avg
+FROM employees;
+```
+
+---
+
+**3. Running Total**
+
+```sql
+SELECT date, amount,
+       SUM(amount) OVER (ORDER BY date) AS running_total
+FROM orders;
+```
+
+---
+
+**4. Previous Row (LAG)**
+
+```sql
+SELECT name, salary,
+       LAG(salary) OVER (ORDER BY salary) AS prev_salary
+FROM employees;
+```
+
+---
+
+## 🔹 When to Use
+
+| Use Case         | Why                              |
+| ---------------- | -------------------------------- |
+| Ranking          | Assign ranks without losing rows |
+| Running totals   | Track cumulative values          |
+| Group comparison | Compare within groups            |
+| Row comparison   | Access previous/next row         |
+
+---
+
+# 14. GROUP BY vs WINDOW FUNCTION
+
+| Feature          | GROUP BY | WINDOW |
+| ---------------- | -------- | ------ |
+| Rows reduced     | ✅ Yes    | ❌ No   |
+| Detail + summary | ❌ No     | ✅ Yes  |
+| Ranking          | ❌ No     | ✅ Yes  |
+| Running total    | ❌ No     | ✅ Yes  |
+
+---
+
+# 15. Common Mistakes (Advanced)
+
+* Using JOIN without ON condition
+* Using wrong JOIN type
+* Forgetting PARTITION BY in window functions
+* Confusing GROUP BY with window functions
+
+---
+
+# Final Quick Summary
+
+* **JOIN → combine tables**
+* **GROUP BY → summarize data**
+* **WINDOW → analyze without losing rows**
+
