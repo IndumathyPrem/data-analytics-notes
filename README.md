@@ -20,21 +20,12 @@ This repository documents my journey of learning Data Analytics.
 - PowerBI/
 - DAX/
 - SQL/
+- Python/
 
 # Goal
 
 To build strong data analytics skills and apply them in real-world projects.
 
----
-
-# Current Focus
-
-- Learning SQL (Joins, Subqueries)
-- Building Projects
-
----
-
-# Future Plans
 
 - Add dashboards
 - Add real-world datasets
